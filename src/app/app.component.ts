@@ -10,6 +10,7 @@ import { ConsultaReservasPage } from '../pages/consulta-reservas/consulta-reserv
 import { CompanyLinkPage } from '../pages/company-link/company-link';
 import { TarjetasEmbarquePage } from '../pages/tarjetas-embarque/tarjetas-embarque';
 import { AspectosLegalesPage } from '../pages/aspectos-legales/aspectos-legales';
+import { NuevaTarjetaPage } from '../pages/nueva-tarjeta/nueva-tarjeta';
 
 @Component({
   templateUrl: 'app.html'

@@ -5,7 +5,6 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-header>
     <ion-navbar>
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
@@ -14,6 +13,45 @@
     </ion-navbar>
   </ion-header>
 
-<ion-content padding>
+  <ion-content padding>
+    <form (ngSubmit)="onAddReserva(f.value)" #f="ngForm"> 
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> ¿A dónde quieres ir? </ion-card-title>
+      </ion-card-header>
+        <ion-card>
+          <ion-item>
+            <ion-label floating >Origen</ion-label>
+            <ion-input type="text" name= "origen" ngModel required ></ion-input>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+              <ion-label floating >Destino</ion-label>
+              <ion-input type="text" name= "destino" ngModel required></ion-input>
+            </ion-item>
+          </ion-card>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Selecciona las fechas de tu viaje</ion-card-title>
+      </ion-card-header>
+        <ion-card>
+            <ion-item>
+              <ion-label floating>Ida</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" name="ida" ngModel required></ion-datetime>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label floating>Vuelta</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" name="vuelta" ngModel required></ion-datetime>
+          </ion-item>
+        </ion-card>
+        <button ion-button block type="submit" [disabled]="!f.valid" color="success">Buscar</button>
+    </ion-card>
+    </form>
+    <ion-content></ion-content>
 
 </ion-content>

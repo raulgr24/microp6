@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { ReservaService} from '../../services/reserva.service';
+import { ConsultaReservasPage } from '../consulta-reservas/consulta-reservas';
 
 /**
  * Generated class for the ReservaPage page.
@@ -15,11 +18,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ReservaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private reservaService: ReservaService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReservaPage');
   }
 
+  onAddReserva(value:{origen:string, destino: string, ida: any, vuelta:any}){
+   this.navCtrl.setRoot(ConsultaReservasPage); 
+   this.reservaService.addReserva(value);
+  }
 }

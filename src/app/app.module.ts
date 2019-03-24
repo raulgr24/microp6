@@ -10,9 +10,13 @@ import { ConsultaReservasPage } from '../pages/consulta-reservas/consulta-reserv
 import { CompanyLinkPage } from '../pages/company-link/company-link';
 import { TarjetasEmbarquePage } from '../pages/tarjetas-embarque/tarjetas-embarque';
 import { AspectosLegalesPage } from '../pages/aspectos-legales/aspectos-legales';
+import { NuevaTarjetaPage } from '../pages/nueva-tarjeta/nueva-tarjeta';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ReservaService } from '../services/reserva.service';
+import { TarjetaService } from '../services/tarjeta.service';
+import { Services } from '@angular/core/src/view';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ConsultaReservasPage,
     CompanyLinkPage,
     TarjetasEmbarquePage,
-    AspectosLegalesPage
+    AspectosLegalesPage,
+    NuevaTarjetaPage
   ],
   imports: [
     BrowserModule, 
@@ -38,12 +43,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ConsultaReservasPage,
     CompanyLinkPage,
     TarjetasEmbarquePage,
-    AspectosLegalesPage
+    AspectosLegalesPage,
+    NuevaTarjetaPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ReservaService,
+    TarjetaService
   ]
 })
 export class AppModule {}
