@@ -6,13 +6,6 @@ import { ReservaService} from '../../services/reserva.service';
 import { TarjetaService } from '../../services/tarjeta.service';
 import { NuevaTarjetaPage } from '../nueva-tarjeta/nueva-tarjeta';
 
-/**
- * Generated class for the ConsultaReservasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-consulta-reservas',
@@ -35,8 +28,8 @@ export class ConsultaReservasPage {
     this.navCtrl.setRoot(ReservaPage);
     }
   }
-  FormularioTarjeta(origen:string,destino:string,ida:any,vuelta:any){
-    this.TarjetaService.addTarjeta(origen,destino,ida,vuelta);
+  crearTarjeta(){
+    this.TarjetaService.addTarjeta();
     this.navCtrl.push(NuevaTarjetaPage);
   }
   ionViewDidLoad() {

@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { TarjetaService } from '../../services/tarjeta.service';
+import { Tarjeta } from '../../models/tarjeta.model'
 
-/**
- * Generated class for the TarjetasEmbarquePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,9 +11,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TarjetasEmbarquePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  tarjetas: Tarjeta []= [];
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private TarjetaService:TarjetaService, private alertCtrl:AlertController) {}
+  ionViewWillEnter(){
+    this.tarjetas = this.TarjetaService.getTarjetas();
+    if(this.tarjetas.length==0){
+      const mensaje =  this.alertCtrl.create({
+        title: 'Aún no tienes ninguna tarjeta de embarque',
+        subTitle: 'Obtén tu tarjeta desde la reserva del vuelo',
+        buttons: ['Aceptar']
+      });
+    mensaje.present();
+    //this.navCtrl.setRoot(ConsultaReservasPage);
+    }
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad TarjetasEmbarquePage');
   }

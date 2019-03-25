@@ -14,7 +14,7 @@
   </ion-header>
 
   <ion-content padding>
-    <form (ngSubmit)="onAddReserva(f.value)" #f="ngForm"> 
+    <form (ngSubmit)="onAddReserva(f.value)" #f="ngForm">
     <ion-card>
       <ion-card-header>
         <ion-card-title> ¿A dónde quieres ir? </ion-card-title>
@@ -40,13 +40,13 @@
         <ion-card>
             <ion-item>
               <ion-label floating>Ida</ion-label>
-              <ion-datetime displayFormat="DD/MM/YYYY" name="ida" ngModel required></ion-datetime>
+              <ion-datetime displayFormat="DD/MMMM/YYYY" name="ida" ngModel required></ion-datetime>
             </ion-item>
         </ion-card>
         <ion-card>
           <ion-item>
             <ion-label floating>Vuelta</ion-label>
-            <ion-datetime displayFormat="DD/MM/YYYY" name="vuelta" ngModel required></ion-datetime>
+            <ion-datetime displayFormat="DD/MMMM/YYYY" name="vuelta" ngModel required></ion-datetime>
           </ion-item>
         </ion-card>
         <button ion-button block type="submit" [disabled]="!f.valid" color="success">Buscar</button>

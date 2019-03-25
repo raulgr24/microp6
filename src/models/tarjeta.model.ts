@@ -1,10 +1,8 @@
 export interface Tarjeta {
-    key?: string;
+    id: any;
     nombre: string;
-    pasaporte: number;
-    telefono: number;
-    origen: string;
-    destino: string;
-    ida: any;
-    vuelta: any;
+    asiento: any;
+    grupo: any;
+    hora: any;
+    puerta: any;
 }

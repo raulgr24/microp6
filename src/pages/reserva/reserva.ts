@@ -27,7 +27,7 @@ export class ReservaPage {
   }
 
   onAddReserva(value:{origen:string, destino: string, ida: any, vuelta:any}){
-   this.navCtrl.setRoot(ConsultaReservasPage); 
+   this.navCtrl.setRoot(ConsultaReservasPage);
    this.reservaService.addReserva(value);
   }
 }
