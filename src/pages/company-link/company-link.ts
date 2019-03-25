@@ -21,5 +21,5 @@ export class CompanyLinkPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CompanyLinkPage');
   }
-
+  openUrl(){ window.open('https://www.google.com/', '_system'); }
 }
